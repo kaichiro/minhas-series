@@ -3,15 +3,23 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "^0.19.0",
+    "bootstrap": "^4.3.1",
+    "concurrently": "^4.1.1",
+    "minhas-series-server": "git+https://github.com/tuliofaria/minhas-series-server.git",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-scripts": "3.0.1"
+    "react-router-dom": "^5.0.1",
+    "react-scripts": "3.0.1",
+    "reactstrap": "^8.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "serverMSS": "node.exe node_modules/minhas-series-server/index.js",
+    "start1": "concurrently \"yarn serverMSS\" \"yarn start\""
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -27,5 +35,28 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "proxy": "http://localhost:3002/",
+  "description": "This project was built from [DevPleno](https://www.devpleno.com/) hands-on.",
+  "main": "index.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kaichiro/minhas-series.git"
+  },
+  "keywords": [
+    "ReactJS",
+    "Hooks",
+    "DevPleno",
+    "Javascript",
+    "Axios",
+    "API",
+    "SPA"
+  ],
+  "author": "Kaichiro Fukuda",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kaichiro/minhas-series/issues"
+  },
+  "homepage": "https://github.com/kaichiro/minhas-series#readme"
 }

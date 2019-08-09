@@ -1,26 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from 'react'
+import {
+  BrowserRouter as Router,
+  Route,
+} from 'react-router-dom'
+import axios from 'axios'
+
+import Generos from './Generos'
+import Header from './Header'
+import Home from './Home'
+import NovoGenero from './NovoGenero'
+import EditarGenero from './EditarGenero.js'
 
 function App() {
+  const [data, setDate] = useState({})
+  useEffect(() => {
+    axios.get('/api').then(resp => {
+      setDate(resp.data)
+    })
+  }, [])
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Router>
+      <div>
+        <Header />
+        <Route path='/' exact component={Home} />
+        <Route path='/genres/:id' exact component={EditarGenero} />
+        <Route path='/genres/new' exact component={NovoGenero} />
+        <Route path='/genres' exact component={Generos} />
+        <pre>{JSON.stringify(data)}</pre>
+      </div>
+    </Router>
+  )
 }
 
-export default App;
+export default App
