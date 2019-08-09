@@ -11,7 +11,7 @@ This project was built from [DevPleno](https://www.devpleno.com/) hands-on.
 ```sh
 git clone https://github.com/kaichiro/minhas-series.git
 ```
---
+
 2) Updating the dependencies node
 ```sh
 yarn
@@ -20,7 +20,7 @@ or
 ```sh
 npm install
 ```
---
+
 3) Running this projetc
 ```sh
 yarn start1

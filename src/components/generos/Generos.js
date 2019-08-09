@@ -45,6 +45,10 @@ const Generos = () => {
         return (
             <div className='container'>
                 <h1>Gêneros</h1>
+                <Link
+                    to='/genres/new'
+                    className='btn btn-primary'
+                >Novo Gênero</Link>
                 <div className='alert alert-warning' role='alert'>
                     {msgGenreEmpty}
                 </div>
