@@ -7,6 +7,7 @@
     "bootstrap": "^4.3.1",
     "concurrently": "^4.1.1",
     "minhas-series-server": "git+https://github.com/tuliofaria/minhas-series-server.git",
+    "npm-run-all": "^4.1.5",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-router-dom": "^5.0.1",
@@ -14,12 +15,15 @@
     "reactstrap": "^8.0.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "npm-run-all buld start-server",
+    "start-react": "react-scripts start",
+    "start-server": "node.exe node_modules/minhas-series-server/index.js",
+    "startOrigin": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "serverMSS": "node.exe node_modules/minhas-series-server/index.js",
-    "start1": "concurrently \"yarn serverMSS\" \"yarn start\""
+    "start1": "concurrently \"yarn start-server\" \"yarn start-react\""
   },
   "eslintConfig": {
     "extends": "react-app"
